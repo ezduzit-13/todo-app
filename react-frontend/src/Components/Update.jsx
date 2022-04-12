@@ -20,18 +20,17 @@ const Update = (props) => {
     return cookieValue
   }
   const csrftoken = getCookie('csrftoken')
-  let num_id = props.num_id
   const handleUpdate = (e) => {
-    console.log(num_id)
     console.log('updating...')
     let new_words = e.target[0].value
 
     let new_post = {
-      id : num_id,
+      id : props.currentID,
       title: new_words,
-      user_id: 1
+      user_id: props.userID
     }
-    let url = 'http://localhost:8000/task/' + num_id + '/'
+
+    let url = 'http://localhost:8000/task/' + props.currentID + '/'
     fetch(url, {
       method: 'PUT',
       headers: {'Content-type': 'application/json', 'X-CSRFToken':csrftoken},

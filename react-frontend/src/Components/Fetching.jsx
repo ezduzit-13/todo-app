@@ -58,7 +58,7 @@ const Fetching = (props) => {
         </div>
         <br />
         <div className='cont'>
-          <Update trigger = {update} num_id = {number}/>
+          <Update trigger = {update} currentID = {number}userID = {props.userID}/>
         </div>
        
 
