@@ -46,8 +46,9 @@ const Update = (props) => {
     <div>
       Update to Do
       <form onSubmit = {handleUpdate}>
-        <input type="text"  name = 'title' />
-        <input type="submit" id = 'submit' />
+        <input type="text"  name = 'title' className='input-field'/>
+        <br />
+        <button type="submit" id = 'submit' className='submit-button'>Submit</button>
       </form>
     </div>
 )

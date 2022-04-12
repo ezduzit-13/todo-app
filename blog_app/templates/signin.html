@@ -5,16 +5,30 @@
 
     </head>
     <body>
-        <h1>Sign in here</h1>
-        <form id="login-form"> 
-            <label for="email">Email</label>
-            <input name="email" id="email">
-            <hr>
-            <label for="password">Password</label>
-            <input name="password" id="password">
-            <hr>
-            <button type="submit">Submit</button>
-        </form>
+      <div class = 'cont'>
+        <div class = 'holder'>
+          
+          <div class="cont">
+            <h1>log in</h1>
+          </div>
+          <div class = 'cont'>
+            <form id="login-form"> 
+              <input name="email" id="email" class = 'field' placeholder="Username">
+              <br>
+              <br>
+              <input name="password" id="password" placeholder="Password" class = 'field'>
+              <br>
+              <br>
+              <button type="submit" class='submit'>Submit</button>
+          </form>
+          </div>
+          </div>
+      </div>
+
+      </div>
+      
+
+        
       <p>don't have an account? <a href="{%url 'signup'%}">Sign up!</a></p>
     </body>
     <script>
@@ -33,5 +47,43 @@
         })
     })
     </script>
+    <style>
+      body{
+        background-color: black;
+        color: #5FFFA4;
+      }
+      .cont{
+        display: flex;
+        justify-content: center;
+      }
+      .holder{
+        outline-style: solid;
+        outline-color: #5FFFA4;
+        width: 30vw;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+        border-radius: 20px;
+      }
+      .field{
+        height: 4vh;
+        width: 20vw;
+      }
+      .submit{
+        height: 4vh;
+        width: 6vw;
+        background-color: black;
+        color: #5FFFA4;
+        outline-style: solid;
+        outline-color: #5FFFA4;
+      }
+      .submit:hover{
+        background-color: #5FFFA4;
+        color: black;
+      }
+      a{
+        color: white;
+      }
+
+    </style>
 </html>
 

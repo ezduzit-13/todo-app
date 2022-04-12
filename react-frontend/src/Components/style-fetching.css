@@ -1,8 +1,57 @@
 table, th, td {
-  border: 1px solid;
+  border: 3px solid;
+  border-color: #5FFFA4;
 
 }
+table{
+  border-collapse: collapse;
+  margin: auto;
+}
 button{
-  width: 10vw;
+  width: 7vw;
   height: 5vh;
+  background-color: black;
+  color: #5FFFA4;
+}
+button:hover{
+  background-color: #5FFFA4;
+  color: black;
+}
+
+body{
+  background-color: black;
+  color: #5FFFA4;
+  font-size: 24px;
+}
+
+.delete-button:hover{
+  background-color: red;
+  color: black;
+}
+
+.add-button{
+  margin-top: 50px;
+  outline-style: solid;
+  outline-color: #5FFFA4;
+  border-radius: 20px;
+}
+
+.cont{
+  display: flex;
+  justify-content: center;
+}
+
+.input-field{
+  background-color: black;
+  color: #5FFFA4;
+  outline-style: solid;
+  outline-color: #5FFFA4;
+  height: 4vh;
+}
+
+.submit-button{
+  margin-top: 10px;
+  height: 4vh;
+  outline-style: solid;
+  outline-color: #5FFFA4;
 }

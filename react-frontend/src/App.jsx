@@ -1,6 +1,5 @@
 
 import React,{useEffect,useState} from 'react'
-import './App.css'
 import Fetching from './Components/Fetching'
 import GetUser from './Components/GetUser'
 import axios from 'axios'
@@ -22,10 +21,11 @@ function App() {
   
   return (
     <div>
-      <Fetching userID = {userID}/> 
-      <a href="/signout">sign out here</a>
+       <a href="/signout" style={{
+        color: '#5FFFA4',
+      }}>Sign out </a>
       <br />
-
+      <Fetching userID = {userID}/> 
     </div>
   );
 }

@@ -3,17 +3,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
-    <h2>Sign Up Here</h2>
+    <div class = 'cont'>
+      <div class = 'holder'>
+        <div class = 'cont'>
+          <h1>sign up</h1>
+        </div>
+        <div class = 'cont'>
+          <form id="signup-form"> 
+            <input name="email" id="email" placeholder="Username" class = 'field'>
+            <br>
+            <br>
+            <input name="password" id="password" placeholder="Password" class = 'field'>
+            <br>
+            <br>
+            <button type="submit" class = 'submit'>Submit</button>
+          </form>
+        </div>
+  
+      </div>
 
-    <form id="signup-form"> 
-      <label for="email">Email</label>
-      <input name="email" id="email">
-      <hr>
-      <label for="password">Password</label>
-      <input name="password" id="password">
-      <hr>
-      <button type="submit">Submit</button>
-    </form>
+    </div>
+   
+    
+   
     
     <p>Already have an account?<a href="{%url 'signin'%}">Sign in!</a></p>
     
@@ -34,5 +46,43 @@
         })
     })
   </script>
+   <style>
+    body{
+      background-color: black;
+      color: #5FFFA4;
+    }
+    .cont{
+      display: flex;
+      justify-content: center;
+    }
+    .holder{
+      outline-style: solid;
+      outline-color: #5FFFA4;
+      width: 30vw;
+      margin-top: 10vh;
+      margin-bottom: 10vh;
+      border-radius: 20px;
+    }
+    .field{
+      height: 4vh;
+      width: 20vw;
+    }
+    .submit{
+      height: 4vh;
+      width: 6vw;
+      background-color: black;
+      color: #5FFFA4;
+      outline-style: solid;
+      outline-color: #5FFFA4;
+    }
+    .submit:hover{
+      background-color: #5FFFA4;
+      color: black;
+    }
+    a{
+      color: white;
+    }
+
+  </style>
 
 </html>

@@ -43,10 +43,10 @@ const csrftoken = getCookie('csrftoken')
     <div>
       Create a New To-Do
       <form onSubmit = {handleSubmit}>
-        <input onChange = {(e) => setContent(e.target.value)} type="text"  name = 'title' />
-        <input type="submit" id = 'submit' />
+        <input onChange = {(e) => setContent(e.target.value)} type="text"  name = 'title' className='input-field'/>
+        <br />
+        <button type="submit" className='submit-button'>Submit</button>
       </form>
-      <p>{content}</p>
     </div>
   ) : ''
 }

@@ -29,7 +29,8 @@ const Fetching = (props) => {
 
   if(list){
     return(
-    <div>       
+    <div>
+      <div style={{'height':'50px'}}></div>       
         <table>
 
             {list.map(list=>{
@@ -39,19 +40,27 @@ const Fetching = (props) => {
               <tr>
                 <td>{list.title}</td>
                 <td>
-                  <button onClick={()=>{getUpdate(() => true); getNumber(()=>list.id)}}>update</button>
+                  <button onClick={()=>{getUpdate(() => true); getNumber(()=>list.id)}}>Change</button>
                 </td>
                 <td><Delete num = {list.id}/></td>
               </tr> 
               )
             })}
         </table>
-        <button onClick = {()=>getCreate(()=>true)}>New To-Do</button>
+        <div className='cont'>
+          <button className='add-button' onClick = {()=>getCreate(()=>true)}>Add</button>
+
+
+        </div>
         <br />
-        <Create trigger = {create} userID = {props.userID}/>
-
-        <Update trigger = {update} num_id = {number}/>
-
+        <div className='cont'>
+          <Create trigger = {create} userID = {props.userID}/>
+        </div>
+        <br />
+        <div className='cont'>
+          <Update trigger = {update} num_id = {number}/>
+        </div>
+       
 
     </div>
     

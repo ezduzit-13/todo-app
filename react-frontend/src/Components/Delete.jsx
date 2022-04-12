@@ -36,7 +36,7 @@ const Delete = (props) => {
     <div>
       <form onSubmit={handleSubmitDelete}>
         <input type="hidden" name="delete_item" value = {props.num}/>
-        <button type = 'submit'>delete</button>
+        <button type = 'submit' className='delete-button'>Delete</button>
       </form>
     </div>
   )
