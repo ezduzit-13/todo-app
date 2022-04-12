@@ -13,15 +13,10 @@ class AppUser(AbstractUser):
     REQUIRED_FIELDS = ['username']
 
 
-class Post(models.Model):
+class Task(models.Model):
     title = models.CharField(max_length=1000)
-    describe = models.CharField(max_length=1000)    
-    content = models.CharField(max_length=3000)
-
-class Comment(models.Model):
-    comment_content = models.CharField(max_length=255)
     user_id = models.ForeignKey(AppUser, on_delete=models.CASCADE)
-    post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
 
-
+    def __str__(self):
+        return self.title
 

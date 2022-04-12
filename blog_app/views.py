@@ -4,19 +4,24 @@ import json
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
-from .models import AppUser,Post,Comment
+from .models import AppUser,Task
 from django.contrib.auth.models import Group, Permission, User
 from django.contrib.auth.decorators import permission_required
+from .serializers import TaskSerializer
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework.viewsets import ModelViewSet
 
 def index(request):
     user = request.user
-    print(user)
+    print(user,'<<<< user')
     if str(user) == 'AnonymousUser':
         return redirect('signin')
     else:
-        return render(request,'index.html',{'a':user})
+        thePage = open('react-frontend/build/index.html').read()
+        return HttpResponse(thePage)
 
-
+# region sign in
 @csrf_exempt
 def signup(request):
     app_user = AppUser.objects.all()
@@ -57,3 +62,27 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect('signin')
+#endregion
+    
+        
+#api views
+class TaskViewSet(ModelViewSet):
+    serializer_class = TaskSerializer
+    queryset = Task.objects.all()
+
+
+@api_view(['GET'])
+def get_userid(request):
+    current_user = request.user.id
+
+    return Response(current_user)
+
+@api_view(['GET'])
+def user_tasks(request,userID):
+
+    tasks = Task.objects.filter(user_id = userID)
+    serializer = TaskSerializer(instance = tasks, many = True)
+
+    return Response(serializer.data)
+
+

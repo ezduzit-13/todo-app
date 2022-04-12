@@ -30,6 +30,17 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'blog_app.AppUser'
 
 # Application definition
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+
+
+
+
+STATICFILES_DIRS = [
+    "react-frontend/build/static",
+   
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,7 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog_app'
+    ###
+    'blog_app',
+    'rest_framework',
+        'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -49,6 +64,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    ###
+        "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = 'blog.urls'
