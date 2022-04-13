@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    {%include 'navbar.html'%}
+    {%block navbar%}
+    {%endblock%}
+  </head>
+  <body>
+    <br>
+    <div class = 'container'>
+    <h1>My Cover Page</h1>
+    <p>I have always been interested in coding and building websites and such. Recently, I participated in a coding bootcamp called Code Platoon, so I figured now would be the best time to get started building a website for me. </p>
+    <hr>
+    <h2>About Me</h2>
+    <p>My name is Edgar Zatarain, I am a Latino American who grew up most of their life in San Diego, CA, but I also spent some of my early years living in Killeen, TX. After highschool, I joined the military literally 5 days after I graduated. While in the military I was able to see a lot of cool places and learn about a lot of cool military technology. Working with this military technology.</p>
+    <hr>
+    <h2>About My Interest</h2>
+    <p>Chess: I am a really big fan of chess and if any of you also love to play chess my chess.com username is (ezduzit13) feel free to challenge me there</p>
+    <p>Coding: Clearly, since this is a website that I am building and will contain all my other coding projects. I started to learn how to code because I always loved going to cafe's but never really had anything to do, and it was always as cliche that people go to cafe's to code so that's what I decided to do.</p>
+    <p>Music: I really really love music. I love listening to music from many genres and many languages. If you wish to share music with me that is always really cool, and if you wish to listen to any of the playlists I've made my spotify is (zatarainedgar9)</p>
+    <hr>
+    <h2>My Projects</h2>
+    <ul>
+      <li><a href="{%url 'index'%}"><h3>To-Do List</h3></a></li>
+    </ul>
+
+
+  </div>
+
+
+  </body>
+  <style>
+    body{
+      background-color: rgb(32, 32, 32);
+      color: white;
+      font-family: Verdana, sans-serif;
+
+    }
+    hr{
+      color: white;
+    }
+    ul{
+      list-style-type: circle;
+    }
+
+  </style>
+</html>

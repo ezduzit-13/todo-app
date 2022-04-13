@@ -21,6 +21,10 @@ def index(request):
         thePage = open('react-frontend/build/index.html').read()
         return HttpResponse(thePage)
 
+def home_page(request):
+    return render(request,'home_page.html')
+    
+
 # region sign in
 @csrf_exempt
 def signup(request):

@@ -12,7 +12,7 @@ const Fetching = (props) => {
   const [create, getCreate] = useState (false)
   const [number,getNumber] = useState(null)
 
-  const url = 'http://localhost:8000/user-post/'+props.userID
+  const url = 'http://localhost:8000/todo/user-post/'+props.userID
 
   useEffect(()=>{
     axios.get(url)

@@ -30,7 +30,7 @@ const Update = (props) => {
       user_id: props.userID
     }
 
-    let url = 'http://localhost:8000/task/' + props.currentID + '/'
+    let url = 'http://localhost:8000/todo/task/' + props.currentID + '/'
     fetch(url, {
       method: 'PUT',
       headers: {'Content-type': 'application/json', 'X-CSRFToken':csrftoken},

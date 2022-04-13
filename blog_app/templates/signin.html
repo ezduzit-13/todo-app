@@ -2,7 +2,9 @@
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="/static/login.js"></script>
-
+      {%include 'navbar.html'%}
+      {%block navbar%}
+      {%endblock%}
     </head>
     <body>
       <div class = 'cont'>
@@ -37,14 +39,14 @@
     document.getElementById('login-form').addEventListener('submit', (event)=>{
         event.preventDefault()
 
-        axios.post('/signin', {
+        axios.post('/todo/signin', {
             email: document.getElementById('email').value,
             password: document.getElementById('password').value,
         }).then((response)=>{
             console.log('submitting.....')
           
             // client-side redirect. use javascript to go to the homepage after logging in.
-            window.location.href = '/index'
+            window.location.href = '/todo/index'
         })
     })
     </script>

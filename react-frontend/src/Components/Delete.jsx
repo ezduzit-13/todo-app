@@ -25,7 +25,7 @@ const Delete = (props) => {
 
     const delete_id = props.num.toString()
 
-    let delete_url = 'http://localhost:8000/task/' + delete_id + '/'
+    let delete_url = 'http://localhost:8000/todo/task/' + delete_id + '/'
 
     axios.delete(
      delete_url,

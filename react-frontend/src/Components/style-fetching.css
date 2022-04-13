@@ -55,3 +55,7 @@ body{
   outline-style: solid;
   outline-color: #5FFFA4;
 }
+.navbar{
+  display: flex;
+  background-color: white;
+}

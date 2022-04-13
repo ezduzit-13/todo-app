@@ -1,14 +1,14 @@
 
 import React,{useEffect,useState} from 'react'
 import Fetching from './Components/Fetching'
-import GetUser from './Components/GetUser'
 import axios from 'axios'
+import NavBar from './Components/NavBar'
 
 
 function App() {
   const [userID,getUser] = useState(null)
 
-  const url = 'http://localhost:8000/current-user/'
+  const url = 'http://localhost:8000/todo/current-user/'
   useEffect(()=> {
     axios.get(url)
     .then(response=>{
@@ -20,13 +20,15 @@ function App() {
     
   
   return (
-    <div>
-       <a href="/signout" style={{
+    <>
+      <NavBar />
+      <br />
+       <a href="/todo/signout" style={{
         color: '#5FFFA4',
       }}>Sign out </a>
       <br />
       <Fetching userID = {userID}/> 
-    </div>
+    </>
   );
 }
 

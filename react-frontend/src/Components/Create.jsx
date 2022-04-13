@@ -18,12 +18,11 @@ const Create = (props) => {
 }
 const csrftoken = getCookie('csrftoken')
   const [content,setContent] = useState('')
-  const url = 'http://localhost:8000/task/'
+  const url = 'http://localhost:8000/todo/task/'
   const handleSubmit = (e) => {
     const blog = {
         title: content,
         user_id: props.userID,
-
     }
     console.log(blog)
     fetch(url, {
