@@ -20,5 +20,5 @@ from blog_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('todo/',include('blog_app.urls')),
-    path('',views.home_page, name = 'home_page')
+    path('',views.index, name = 'home_page')
 ]

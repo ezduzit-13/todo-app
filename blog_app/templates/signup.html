@@ -25,11 +25,7 @@
         </div>
       </div>
 
-    </div>
-   
-    
-   
-    
+    </div> 
     <p>Already have an account?<a href="{%url 'signin'%}">Sign in!</a></p>
     
   </body>
@@ -39,16 +35,17 @@
     document.getElementById('signup-form').addEventListener('submit', (event)=>{
         event.preventDefault()
 
-        axios.post('todo/', {
+        axios.post('/todo/signup', {
             email: document.getElementById('email').value,
             password: document.getElementById('password').value,
         }).then((response)=>{
           
             // client-side redirect. use javascript to go to the homepage after logging in.
-            window.location.href = 'todo/index'
+            window.location.href = '/todo/index'
         })
     })
   </script>
+  
    <style>
     body{
       background-color: black;
